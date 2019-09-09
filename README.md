@@ -2,7 +2,7 @@
 
 # Introduction
 
-VueC8 is a small and pragmatic solution to create real time bindings between a C8DB and your Vue application. Making it straightforward to always keep your local data in sync with remotes databases.
+VueC8 is a small and pragmatic solution to create real time bindings between a Macrometa data platform (C8) and your Vue application. Making it straightforward to always keep your local data in sync with remotes databases.
 
 ##Why
 While [JSC8](https://github.com/macrometacorp/jsC8 'JSC8') does provide an API to keep your local data in sync with any changes happening in the remote database, it is more tedious. Here is the code you need to write to keep your local state in sync with C8DB without using Vuec8. Let's take the example of binding a collection.
@@ -10,7 +10,7 @@ While [JSC8](https://github.com/macrometacorp/jsC8 'JSC8') does provide an API t
 To explore more you can visit [jsc8_tutorial](https://cdn.document360.io/d1a6730a-fd70-4f0a-a08d-dfa28ca8b958/Images/Documentation/pyc8_tutorial.png)
 
     Fabric = require('jsc8')
-    fabric = new Fabric("MY-C8-URL");
+    fabric = new Fabric("MY-Macrometa-URL");
     ...
     ...
     fabric.login(tenant, user, password)
@@ -116,7 +116,7 @@ VueC8 must be installed as a Vue plugin
 - **config** : string or string[] or [Config](https://github.com/Macrometacorp/jsC8/blob/master/src/connection.ts#L66 'Config')
 
 **2. Vue component**
-c8db is injected into your vue object, you can assign c8db a object or a function which returns a object. object keys should be same as the keys defined in your vue data object and the values should be of Type
+Macrometa database (C8DB) is injected into your vue object, you can assign c8db a object or a function which returns a object. object keys should be same as the keys defined in your vue data object and the values should be of Type
 
 ```
 string | {
@@ -176,7 +176,7 @@ new Vue{
 
 **3. c8Refs**
 
-- vuec8 adds **c8Refs** in every component where c8db is initialized. c8Refs will have reference to you collection & fabric instance for the a every data key referenced in c8db.
+- vuec8 adds **c8Refs** in every component where c8db is initialized. c8Refs will have reference to you collection & fabric instance for the a every data key referenced in Macrometa platform.
   [jsc8](https://github.com/Macrometacorp/jsC8 'jsc8') has complete guide on [fabric](https://github.com/Macrometacorp/jsC8/blob/master/docs/Reference/Database/FabricManipulation.mdhttp:// 'fabric') & [collection](https://github.com/Macrometacorp/jsC8/tree/master/docs/Reference/Collection 'collection') instance.
 
 ```javascript
