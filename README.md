@@ -153,7 +153,7 @@ new Vue{
 
 or
 
-````javascript
+```javascript
 new Vue{
 ...
 	data:{
@@ -175,8 +175,9 @@ new Vue{
 ```
 
 **3. c8Refs**
-- vuec8 adds **c8Refs**  in every component where c8db is initialized. c8Refs will have refrence to you collection & fabric instance for the a every data key refrenced in c8db.
-[jsc8](https://github.com/Macrometacorp/jsC8 "jsc8") has complete guide on [fabirc](https://github.com/Macrometacorp/jsC8/blob/master/docs/Reference/Database/FabricManipulation.mdhttp:// "fabirc") & [collection](https://github.com/Macrometacorp/jsC8/tree/master/docs/Reference/Collection "collection") instance.
+
+- vuec8 adds **c8Refs** in every component where c8db is initialized. c8Refs will have refrence to you collection & fabric instance for the a every data key refrenced in c8db.
+  [jsc8](https://github.com/Macrometacorp/jsC8 'jsc8') has complete guide on [fabirc](https://github.com/Macrometacorp/jsC8/blob/master/docs/Reference/Database/FabricManipulation.mdhttp:// 'fabirc') & [collection](https://github.com/Macrometacorp/jsC8/tree/master/docs/Reference/Collection 'collection') instance.
 
 ```javascript
 new Vue{
@@ -195,4 +196,3 @@ new Vue{
 ...
 }
 ```
-````
