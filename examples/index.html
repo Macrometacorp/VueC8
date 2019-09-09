@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vuec8 Todo App Demo</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="../dist/vuec8.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <ul>
+        <li>
+          {{ todos }}
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      Vue.use(Vuec8.vuec8, {
+        auth: {
+          tenant: '',
+          password: '',
+          user: '',
+        },
+        config: '',
+      })
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          todos: [],
+        },
+        c8db: {
+          todos: 'test',
+        },
+        updated() {
+          console.log(this.$c8Refs)
+        },
+      })
+    </script>
+  </body>
+</html>
