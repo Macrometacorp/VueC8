@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "vuec8",
   "version": "0.0.1",
   "description": "VueC8 bindings for Vue.js",
