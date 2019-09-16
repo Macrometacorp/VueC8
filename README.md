@@ -99,7 +99,7 @@ VueC8 must be installed as a Vue plugin
             config: 'URL OR CONFIG obj',
           })
 
-#API
+# API
 **1. Plugin Options **
 
 ```json
