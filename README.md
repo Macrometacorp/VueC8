@@ -100,7 +100,7 @@ VueC8 must be installed as a Vue plugin
           })
 
 # API
-**1. Plugin Options **
+**1. Plugin Options**
 
 ```json
 {
