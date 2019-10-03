@@ -45,7 +45,7 @@ Now let's look at the equivalent code with vuec8:
 
     Vue.use(vuec8, {
             auth: {
-			  email: 'EMAIL',
+	      email: 'EMAIL',
               password: 'PASSWORD',
             },
             config: 'URL OR CONFIG obj',
@@ -90,7 +90,7 @@ VueC8 must be installed as a Vue plugin
 
     Vue.use(vuec8, {
             auth: {
-			  email: 'EMAIL',
+	      email: 'EMAIL',
               password: 'PASSWORD',
             },
             config: 'URL OR CONFIG obj',
@@ -102,7 +102,7 @@ VueC8 must be installed as a Vue plugin
 ```json
 {
   "auth": {
-	"email": "EMAIL",
+    "email": "EMAIL",
     "password": "PASSWORD",
   },
   "fabricName": "fabricName",
