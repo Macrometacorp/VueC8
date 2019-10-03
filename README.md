@@ -14,9 +14,8 @@ To explore more you can visit [jsc8_tutorial](https://cdn.document360.io/d1a6730
     fabric = new Fabric("MY-Macrometa-URL");
     ...
     ...
-    fabric.login(tenant, user, password)
+    fabric.login(email, password)
               .then(() => {
-              fabric.useTenant("TENANT-URL")
     }
     ...
     ...
@@ -46,9 +45,8 @@ Now let's look at the equivalent code with vuec8:
 
     Vue.use(vuec8, {
             auth: {
-              tenant: 'TENANT_NAME',
+			  email: 'EMAIL',
               password: 'PASSWORD',
-              user: 'USERNAME',
             },
             config: 'URL OR CONFIG obj',
           })
@@ -92,9 +90,8 @@ VueC8 must be installed as a Vue plugin
 
     Vue.use(vuec8, {
             auth: {
-              tenant: 'TENANT_NAME',
+			  email: 'EMAIL',
               password: 'PASSWORD',
-              user: 'USERNAME',
             },
             config: 'URL OR CONFIG obj',
           })
@@ -105,9 +102,8 @@ VueC8 must be installed as a Vue plugin
 ```json
 {
   "auth": {
-    "tenant": "TENANT_NAME",
+	"email": "EMAIL",
     "password": "PASSWORD",
-    "user": "USERNAME"
   },
   "fabricName": "fabricName",
   "config": "url"
