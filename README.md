@@ -44,11 +44,11 @@ To explore more you can visit [jsc8_tutorial](https://cdn.document360.io/d1a6730
 Now let's look at the equivalent code with vuec8:
 
     Vue.use(vuec8, {
-	auth: {
+	    auth: {
 		email: 'EMAIL',
 		password: 'PASSWORD',
-	},
-	config: 'URL OR CONFIG obj',
+	    },
+	    config: 'URL OR CONFIG obj',
     })
 
     new Vue({
