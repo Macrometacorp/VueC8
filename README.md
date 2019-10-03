@@ -89,10 +89,10 @@ VueC8 must be installed as a Vue plugin
     import { vuec8 } from "vuec8";
 
     Vue.use(vuec8, {
-            auth: {
+	    auth: {
 	      email: 'EMAIL',
-              password: 'PASSWORD',
-            },
+	      password: 'PASSWORD',
+	    },
             config: 'URL OR CONFIG obj',
           })
 
