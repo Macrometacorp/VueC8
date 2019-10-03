@@ -1,6 +1,6 @@
 {
   "name": "vuec8",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VueC8 bindings for Vue.js",
   "main": "dist/vuec8.common.js",
   "module": "dist/vuec8.esm.js",
@@ -67,6 +67,6 @@
   },
   "dependencies": {
     "vue": "^2.6.10",
-    "jsc8": "^0.12.5"
+    "jsc8": "^0.12.9"
   }
 }
