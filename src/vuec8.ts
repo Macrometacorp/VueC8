@@ -90,15 +90,14 @@ const getFabric = async (opts?: OptionType): Promise<Fabric> => {
     if (opts && Object.keys(opts).length) {
       const {
         config,
-        auth: { tenant, user, password },
+        auth: { email, password },
       } = opts
 
       const fabric: Fabric = jsc8(`https://${setTenantUrl(config)}`)
 
       fabric
-        .login(tenant, user, password)
+        .login(email, password)
         .then(() => {
-          fabric.useTenant(tenant)
           if (opts.fabricName) {
             fabric.useFabric(opts.fabricName)
           }

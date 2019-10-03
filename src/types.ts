@@ -2,8 +2,7 @@ import { Config } from "jsc8";
 
 export type OptionType = {
   auth: {
-    tenant: string;
-    user: string;
+    email: string;
     password: string;
   };
   config: Config;
