@@ -93,7 +93,7 @@ VueC8 must be installed as a Vue plugin
 	      email: 'EMAIL',
 	      password: 'PASSWORD',
 	    },
-       config: 'URL OR CONFIG obj',
+        config: 'URL OR CONFIG obj',
     })
 
 # API
