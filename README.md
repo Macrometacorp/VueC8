@@ -10,58 +10,62 @@ While [JSC8](https://github.com/macrometacorp/jsC8 'JSC8') does provide an API t
 
 To explore more you can visit [jsc8_tutorial](https://cdn.document360.io/d1a6730a-fd70-4f0a-a08d-dfa28ca8b958/Images/Documentation/pyc8_tutorial.png)
 
-    Fabric = require('jsc8')
-    fabric = new Fabric("MY-Macrometa-URL");
-    ...
-    ...
-    fabric.login(email, password)
-              .then(() => {
-    }
-    ...
-    ...
+```js
+Fabric = require('jsc8')
+fabric = new Fabric("MY-Macrometa-URL");
 
-    new Vue({
-    	data: () => ({
-    		todo: []
-    	}),
-    	created() {
-    		fabric.query(`C8QL query`)
-        		.then((cursor: ArrayCursor) => {
-    				this.todo= cursor
-    			});
-    		const subscription = fabric.collection('Collection Name');
+// ...
 
-    		subscription.onchange({
-    			onmessage:function onchange(documentMsg){
-    				// Write logic here to manage the updated document
-    			}
-    		},
-    		URL);
-    		},
-    	//manage unsubscribe onDestroy.
-    })
+fabric.login(email, password)
+    .then(() => {
+    });
+
+// ...
+
+new Vue({
+    data: () => ({
+        todo: []
+    }),
+    created() {
+        fabric.query(`C8QL query`)
+            .then((cursor: ArrayCursor) => {
+                this.todo= cursor
+            });
+        const subscription = fabric.collection('Collection Name');
+
+        subscription.onchange({
+            onmessage:function onchange(documentMsg){
+                // Write logic here to manage the updated document
+            }
+        }, URL);
+    },
+    //manage unsubscribe onDestroy.
+});
+```
 
 Now let's look at the equivalent code with vuec8:
 
-    Vue.use(vuec8, {
-	    auth: {
-		email: 'EMAIL',
-		password: 'PASSWORD',
-	    },
-	    config: 'URL OR CONFIG obj',
-    })
+```js
+Vue.use(vuec8, {
+    auth: {
+        email: 'EMAIL',
+        password: 'PASSWORD',
+    },
+    config: 'URL OR CONFIG obj',
+});
 
-    new Vue({
-    	el: '#app',
-    	data: {
-    		todo: [],
-    	},
-    	c8db: {
-    		todo: 'collectionName',
-    	},
-    })
+new Vue({
+    el: '#app',
+    data: {
+        todo: [],
+    },
+    c8db: {
+        todo: 'collectionName'
+    }
+})
+```
 
-    ## Download and Install JavaScript Client
+## Download and Install JavaScript Client
 
 # Installation
 
@@ -86,15 +90,17 @@ npm run build
 
 VueC8 must be installed as a Vue plugin
 
-    import { vuec8 } from "vuec8";
+```js
+import { vuec8 } from "vuec8";
 
-    Vue.use(vuec8, {
-	    auth: {
-	      email: 'EMAIL',
-	      password: 'PASSWORD',
-	    },
-        config: 'URL OR CONFIG obj',
-    })
+Vue.use(vuec8, {
+    auth: {
+        email: 'EMAIL',
+        password: 'PASSWORD',
+    },
+    config: 'URL OR CONFIG obj',
+});
+```
 
 # API
 **1. Plugin Options**
@@ -115,14 +121,14 @@ VueC8 must be installed as a Vue plugin
 **2. Vue component**
 Macrometa database (C8DB) is injected into your vue object, you can assign c8db a object or a function which returns a object. object keys should be same as the keys defined in your vue data object and the values should be of Type
 
-```
+```js
 string | {
       collection: string;
       filter?: Array<{
-					  fieldPath: string;
-					  opStr: "<" | "<=" | "==" | ">=" | ">";
-					  value: any;
-					}>;
+                      fieldPath: string;
+                      opStr: "<" | "<=" | "==" | ">=" | ">";
+                      value: any;
+                    }>;
       documentId?: string;
       fabricName?: string;
     }
@@ -135,39 +141,39 @@ string | {
 
 - **documentId** if documentId is assigned it will fetch a specific document in a collection.
 
-```javascript
+```js
 new Vue{
-...
-	data:{
-		todo:[],
-	},
-	c8db:{
-		todo: "collection"
-	},
-...
+//...
+    data: {
+        todo: [],
+    },
+    c8db: {
+        todo: "collection"
+    },
+//...
 }
 ```
 
 or
 
-```javascript
+```js
 new Vue{
-...
-	data:{
-		todo:[],
-	},
-	c8db:{
-		todo: {
-		fabricName: "fabric",
-		collection : "collection",
-		filter:[{
-					fieldPath: "value",
-					opStr: "<",
-					value: 5
-			}]
-		}
-	},
-...
+    //...
+    data: {
+        todo: [],
+    },
+    c8db: {
+        todo: {
+            fabricName: "fabric",
+            collection : "collection",
+            filter:[{
+                fieldPath: "value",
+                opStr: "<",
+                value: 5
+            }]
+        }
+    }
+    //...
 }
 ```
 
@@ -176,20 +182,20 @@ new Vue{
 - vuec8 adds **c8Refs** in every component where c8db is initialized. c8Refs will have reference to you collection & fabric instance for the a every data key referenced in Macrometa platform.
   [jsc8](https://github.com/Macrometacorp/jsC8 'jsc8') has complete guide on [fabric](https://github.com/Macrometacorp/jsC8/blob/master/docs/Reference/Database/FabricManipulation.mdhttp:// 'fabric') & [collection](https://github.com/Macrometacorp/jsC8/tree/master/docs/Reference/Collection 'collection') instance.
 
-```javascript
+```js
 new Vue{
-...
-	data:{
-		todo:[],
-	},
-	c8db:{
-		todo: "collection"
-	},
-	updated(){
-	  // It can be used to handle customized behavior.
-		this.$c8Refs.todo._collection // collection reference for todo
-		this.$c8Refs.todo._fabric // fabric reference for tod
-	},
-...
+    // ...
+    data: {
+        todo: [],
+    },
+    c8db: {
+        todo: "collection"
+    },
+    updated() {
+      // It can be used to handle customized behavior.
+        this.$c8Refs.todo._collection // collection reference for todo
+        this.$c8Refs.todo._fabric // fabric reference for tod
+    },
+    // ...
 }
 ```
