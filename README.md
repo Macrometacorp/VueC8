@@ -1,5 +1,7 @@
 # VueC8
 
+> Note: This SDK is not maintained anymore. Please use [jsC8](https://github.com/Macrometacorp/jsC8) instead.
+
 # Introduction
 
 VueC8 is a small and pragmatic solution to create real time bindings between a Macrometa data platform (C8) and your Vue application. Making it straightforward to always keep your local data in sync with remotes databases.
