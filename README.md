@@ -1,6 +1,6 @@
 # VueC8
 
-> Note: This SDK is not maintained anymore. Please use [jsC8](https://github.com/Macrometacorp/jsC8) instead.
+> Note: This SDK is not being actively maintained. Please use [jsC8](https://github.com/Macrometacorp/jsC8) instead.
 
 # Introduction
 
